@@ -4,11 +4,11 @@ metadata:
   name: echo-rs
 spec:
   replicas: 4
-  selector:
+  selector: # Pod selector
     matchLabels:
       app: echo
       tier: app
-  template:
+  template: # matchLabels이 replicas만큼 없을 때 Pod생성
     metadata:
       labels:
         app: echo

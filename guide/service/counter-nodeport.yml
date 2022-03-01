@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: counter-np
+spec:
+  type: NodePort # type이 없다면 기본으로 clusterIp
+  ports:
+    - port: 3000 # 서비스가 생성할 포트
+      protocol: TCP
+      nodePort: 31000 # 클러스터의 모든 노드에 포트 오픈
+  selector:
+    app: counter
+    tier: app
